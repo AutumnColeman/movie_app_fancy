@@ -1,0 +1,15 @@
+.searchdiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.searchbar {
+  width: 400px;
+  height: 40px;
+  font-size: 1.5em;
+}
+
+li{
+  /*list-style-type: none;*/
+}
