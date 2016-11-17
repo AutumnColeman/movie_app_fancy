@@ -1,5 +1,6 @@
 var app = angular.module("MovieApp", ['ui.router']);
 
+//Factory
 app.factory('MovieService', function($http) {
   var service = {};
   var API_KEY = '8fa482ca4a8b8964d4f857eee886e8e9';
@@ -16,37 +17,50 @@ app.factory('MovieService', function($http) {
 return service;
 });
 
+//Controllers
 app.controller('ResultsController', function($scope, $stateParams, $state, MovieService) {
-  $scope.pageName = $stateParams.searchResults;
+  $scope.pageName = $stateParams.query;
   MovieService.movieSearch($scope.pageName)
       .success(function(data) {
-        //give movie details, I hope
+        //give movie results, I hope
         console.log('Search details', data);
         $scope.movieQueries = data.results;
       });
 });
 
 app.controller('SearchController', function($scope, $stateParams, $state) {
-  $scope.clickMovieSearch = function() {
-      $state.go('searchView', {searchResults: $scope.query});
+  $scope.search = function() {
+      $state.go('search_results', {query: $scope.query});
 
     };
 });
 
+app.controller('DetailsController', function($scope, $stateParams, $state) {
+
+  });
+});
+
+//States
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state({
     name: 'search',
-    url: '/',
+    url: '/search',
     templateUrl: 'search.html',
     controller: 'SearchController'
   })
   .state({
-    name: 'searchView',
-    url: '/{searchResults}',
+    name: 'search_results',
+    url: '/search/{query}',
     templateUrl: 'search_results.html',
     controller: 'ResultsController'
+  })
+  .state({
+    name: 'movie_details',
+    url: '/movie/{query}',
+    templateUrl: 'movie_details.html',
+    controller: 'DetailsController'
   });
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/search');
 });
