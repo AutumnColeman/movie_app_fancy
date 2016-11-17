@@ -1,9 +1,8 @@
-Search Results Page
 <div>
   <ul>
     <li class="poster" ng-repeat="movie in movieQueries">
       <h2 ng-show="!movie.poster_path">{{movie.title}}</h2>
-      <img ng-if="movie.poster_path" ng-src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}">
+      <img ng-if="movie.poster_path" ng-click="details(movie.id)" ng-src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}">
     </li>
   </ul>
 </div>
