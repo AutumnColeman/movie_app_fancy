@@ -1,4 +1,23 @@
 <div>
+  <div id="navbar" class="navbar navbar-default " role="navigation">
+      <div class="container-fluid">
+          <div class="navbar-header"><a class="navbar-brand" href="#"><i class="fa fa-ticket" aria-hidden="true"></i>MovieSearch</a>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+              </button>
+          </div>
+          <div class="collapse navbar-collapse navbar-menubuilder">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>
+  </a>
+                  </li>
+                  <li><a href="#">About</a>
+                  </li>
+                  <li><form class="navSearch" ng-submit="search()"><input type="text" name="name" ng-model="query" placeholder="Search"></form>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
   <ul>
     <li class="poster" ng-repeat="movie in movieQueries">
       <h2 ng-show="!movie.poster_path">{{movie.title}}</h2>
