@@ -23,7 +23,7 @@
         </div>
     </div>
 </div>
-<div class="details">
+<!-- <div class="details cf">
   <h1>{{movieQueries.original_title}}</h1>
   <img class="poster_path" ng-src="https://image.tmdb.org/t/p/original/{{movieQueries.poster_path}}" alt="Movie poster" />
   <h3>{{movieQueries.tagline}}</h3>
@@ -32,4 +32,18 @@
   <p>Runtime: {{movieQueries.runtime}} minutes</p>
   <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
 
+</div> -->
+<div class="col-xs-6">
+  <h1>{{movieQueries.original_title}}</h1>
+  <h3>{{movieQueries.tagline}}</h3>
+  <p>{{movieQueries.overview}}</p>
+  <p>Average review: {{movieQueries.vote_average}}</p>
+  <p>Runtime: {{movieQueries.runtime}} minutes</p><br>
+  <!-- how to make link go back -->
+  <a href="#/search/" {{id}}>
+    <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i>
+  </a>
+</div>
+<div class="col-xs-6">
+    <img class="poster_path" ng-src="https://image.tmdb.org/t/p/original/{{movieQueries.poster_path}}" alt="Movie poster" />
 </div>

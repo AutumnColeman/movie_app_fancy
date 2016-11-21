@@ -13,7 +13,7 @@ body {
   /*font-family: 'Syncopate', sans-serif;*/
   color: #32251C;
 }
-h1, p {
+h1, h3, p {
   font-family:'Londrina Solid', cursive;
   /*width: 40%;*/
   display: inline-block;
@@ -30,12 +30,18 @@ h1, p {
   font-size: 1.5em;
   font-family:'Londrina Solid', cursive;
 }
+.poster > img{
+  width: 100%;
+  height: 100%;
+}
 li.poster {
-  width: 300px;
+  width: 30%;
   height: 444px;
   list-style-type: none;
   float: left;
   position: relative;
+  border: 4px solid #FDE4BB;
+  margin: 5px 5px;
 }
 li.poster h2 {
   position: absolute;
@@ -45,10 +51,10 @@ li.poster h2 {
   font-family:'Londrina Solid', cursive;
 }
 .poster_path {
-  width: 30%;
-  float: right;
+  width: 50%;
+  /*float: right;*/
   border: 4px solid #FDE4BB;
-  margin: -102px 60px;
+  margin: 21px 90px;
 }
 .details {
   margin: 20px;
@@ -109,17 +115,38 @@ li.poster h2 {
   margin: 11% 2%;
 }
 ::-webkit-input-placeholder {
-   color: #b8afa9;
+   color: #cea17b;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #b8afa9;
+   color: #cea17b;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #b8afa9;
+   color: #cea17b;
 }
 
 :-ms-input-placeholder {
-   color: #b8afa9;
+   color: #cea17b;
+}
+input[type="text"], textarea {
+  color: #cea17b;
+  background-color : #FDE4BB;
+  border: none;
+}
+textarea:focus, input:focus {
+    color: #32251C;
+}
+i.fa.fa-arrow-circle-left::before {
+  color: #32251C;
+}
+i.fa.fa-arrow-circle-left:after {
+  color: pink;
+}
+.title {
+  text-align: center;
+  display: block;
+}
+.logo {
+  width: 30%;
 }
